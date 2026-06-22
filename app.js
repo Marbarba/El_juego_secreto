@@ -73,3 +73,16 @@ function reiniciarJuego() {
 }
 
 condicionesIniciales();
+
+document.getElementById('valorUsuario').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        const input = document.getElementById('valorUsuario').value;
+
+        if (input === '') {
+            asignarTextoElemento('p', 'Por favor ingresa un número');
+            return;
+        }
+
+        verificarIntento();
+    }
+});
